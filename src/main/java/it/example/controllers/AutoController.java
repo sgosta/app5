@@ -54,4 +54,11 @@ public class AutoController {
         return mv;
     }
 
+    @GetMapping("/delete_auto")
+    public String deleteAuto(@RequestParam("id")int id) {
+        autoService.deleteAuto(id);
+
+        return "redirect:/";
+    }
+
 }

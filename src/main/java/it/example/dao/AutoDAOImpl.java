@@ -46,4 +46,9 @@ public class AutoDAOImpl implements AutoDAO {
             return null;
         }
     }
+
+    @Override
+    public void deleteAuto(int id) {
+        jdbcTemplate.update("DELETE FROM autos WHERE id= ?", id);
+    }
 }

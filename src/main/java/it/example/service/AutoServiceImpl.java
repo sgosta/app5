@@ -27,4 +27,9 @@ public class AutoServiceImpl implements AutoService{
     public Auto getAutoById(int id) {
         return autoDAO.getAutoById(id);
     }
+
+    @Override
+    public void deleteAuto(int id) {
+        autoDAO.deleteAuto(id);
+    }
 }

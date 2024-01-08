@@ -8,5 +8,5 @@ public interface AutoService {
     List<Auto> loadAutos();
     void saveAuto(Auto auto);
     Auto getAutoById(int id);
-
+    void deleteAuto(int id);
 }

@@ -32,6 +32,7 @@
         <td>${auto.coppia}</td>
         <td>${auto.colore}</td>
         <td><a href="update_auto?id=${auto.id}">Update</a></td>
+        <td><a href="delete_auto?id=${auto.id}" onclick="if(!(confirm('Procedere con la eliminazione di questa auto?'))) return false">Delete</a></td>
       </tr>
     </c:forEach>
 
