@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  tomcat-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - "./target:/usr/local/tomcat/webapps"
+
+  postgres:
+    image: postgres:latest
+    container_name: postgresql
+    ports:
+      - target: 5432
+        published: 5433
+        protocol: tcp
+        mode: host
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - type: volume
+        source: postgres
+        target: /data
+
+
+volumes:
+  postgres:
+
+#    image: postgres
+#    ports:
+#      - "127.0.0.1:5432:5432"
+#    environment:
+#      POSTGRES_DB: "Garage"
+#      POSTGRES_USER: "postgres"
+#      POSTGRES_PASSWORD: "postgres"
