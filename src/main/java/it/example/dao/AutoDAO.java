@@ -1,7 +1,6 @@
 package it.example.dao;
 
 import it.example.model.Auto;
-
 import java.util.List;
 
 public interface AutoDAO {
