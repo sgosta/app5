@@ -12,8 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@Controller //Il Controller è SOLO il Presentation layer dei vari endpoints, la logica è affidata al DAO, chiamato
-            //dal service
+@Controller //Il Controller è SOLO il Presentation layer dei vari endpoints, la logica è affidata al DAO, chiamato dal service
 public class AutoController {
 
 //GET => User richiede info -> View -> Controller -> DAO -> DB

@@ -12,7 +12,7 @@
   <table border="5" width="80%">
     <thead>
     <tr>
-      <td >ID</td>
+      <td>ID</td>
       <td>Marca</td>
       <td>Modello</td>
       <td>Cilindrata</td>
@@ -41,7 +41,7 @@
 
 <div align="center">
 <form action="add_auto">
-  <input type="submit" value="==> Aggiungi Auto! <==">
+  <input type="submit" value="==> Aggiungi Auto <==">
 </form>
 </div>
 
