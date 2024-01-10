@@ -14,36 +14,33 @@
 <div align="center">
   <form:form modelAttribute="auto" action="save_auto" method="POST">
     <form:hidden path="id"/>
-    <label>Marca:   </label>
+    <label>Marca: </label>
     <form:input path="marca"/>
     <br/>
-    <label>Modello:  </label>
+    <label>Modello: </label>
     <form:input path="modello" />
     <br/>
     <label>Cilindrata: </label>
     <form:input path="cilindrata"/>
     <br/>
-    <label>Cavalli:   </label>
+    <label>Cavalli: </label>
     <form:input path="cavalli"/>
     <br/>
-    <label>Coppia:   </label>
+    <label>Coppia: </label>
     <form:input path="coppia"/>
     <br/>
-    <label>Colore:   </label>
+    <label>Colore: </label>
     <form:input path="colore"/>
     <br/>
-
-    <input type="submit" value="Aggiungi o Aggiorna">
+    <input type="submit" value="Aggiungi o Aggiorna" size="20%">
 
   </form:form>
 </div>
 
 <div align="center">
-
   <form action="http://localhost:8080/app5/">
     <input type="submit" value="Torna alla Lista di Auto">
   </form>
-
 </div>
 
 </body>
