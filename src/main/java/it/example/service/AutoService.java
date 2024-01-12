@@ -9,6 +9,5 @@ public interface AutoService {
     void saveAuto(Auto auto);
     Auto getAutoById(int id);
     void deleteAuto(int id);
-
     List<Auto> searchAuto(String text);
 }

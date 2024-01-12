@@ -93,5 +93,4 @@ public class Auto {     //Entity Object, Domain Object, Business Object che mapp
                 "Nm, colore='" + colore + '\'' +
                 "}\n";
     }
-
 }
