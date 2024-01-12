@@ -54,15 +54,14 @@ public class AutoDAOImpl implements AutoDAO {
 
     @Override
     public List<Auto> searchAuto(String text) {
-        Object obj = "%";
-        text = String.valueOf(obj).concat(text.concat("%"));
+        text = "%"+text+"%";
         Object[] sqlParams = {text,text,text,text,text,text};
         try {
-            return jdbcTemplate.query("SELECT * FROM autos WHERE marca LIKE ? OR modello LIKE ? OR " +
-                    "CAST(cilindrata AS VARCHAR) LIKE ? OR " +
-                    "CAST(cavalli AS VARCHAR) LIKE ? OR " +
-                    "CAST(coppia AS VARCHAR) LIKE ? OR " +
-                    "colore LIKE ?", new AutoRowMapper(), sqlParams);
+            return jdbcTemplate.query("SELECT * FROM autos WHERE LOWER(marca) LIKE LOWER(?) OR LOWER(modello) LIKE LOWER(?) OR " +
+                    "LOWER(CAST(cilindrata AS VARCHAR)) LIKE LOWER(?) OR " +
+                    "LOWER(CAST(cavalli AS VARCHAR)) LIKE LOWER(?) OR " +
+                    "LOWER(CAST(coppia AS VARCHAR)) LIKE LOWER(?) OR " +
+                    "LOWER(colore) LIKE LOWER(?)", new AutoRowMapper(), sqlParams);
         } catch (EmptyResultDataAccessException e) {
             return null;
         }

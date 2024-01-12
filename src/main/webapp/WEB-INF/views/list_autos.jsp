@@ -47,7 +47,6 @@
         <td><a href="delete_auto?id=${auto.id}" onclick="if(!(confirm('Procedere con la eliminazione di questa auto?'))) return false">Delete</a></td>
       </tr>
     </c:forEach>
-
   </table>
 </div>
 
