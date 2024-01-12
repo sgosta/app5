@@ -60,4 +60,12 @@ public class AutoController {
         return "redirect:/";
     }
 
+    @GetMapping("/search_auto")
+    public ModelAndView searchAuto(@RequestParam("searchText") String text) {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("loadedAutos", autoService.searchAuto(text));
+        mv.setViewName("list_autos");
+
+        return mv;
+    }
 }

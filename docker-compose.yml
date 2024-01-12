@@ -30,6 +30,7 @@ services:
     container_name: flyway
     depends_on:
       - postgres
+    command: -locations=filesystem:/flyway/sql -connectRetries=60 migrate
     volumes:
       - "./flyway/conf:/flyway/conf"
       - "./flyway/sql:/flyway/sql"

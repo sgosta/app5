@@ -9,6 +9,18 @@
 <body>
 
 <div align="center">
+  <form action="search_auto" method="GET">
+    <label for="searchText">Ricerca Auto:</label>
+    <input type="text" id="searchText" name="searchText" />
+    <input type="submit" value="Cerca" />
+  </form>
+</div>
+<div align="center">
+<form action="http://localhost:8080/app5/" method="GET">
+  <input type="submit" value="Refresh">
+</form>
+</div>
+<div align="center">
   <table border="5" width="80%">
     <thead>
     <tr>

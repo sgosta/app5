@@ -10,4 +10,5 @@ public interface AutoDAO {
     Auto getAutoById(int id);
     void deleteAuto(int id);
 
+    List<Auto> searchAuto(String text);
 }

@@ -31,4 +31,9 @@ public class AutoServiceImpl implements AutoService{
     public void deleteAuto(int id) {
         autoDAO.deleteAuto(id);
     }
+
+    @Override
+    public List<Auto> searchAuto(String text) {
+        return autoDAO.searchAuto(text);
+    }
 }

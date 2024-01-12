@@ -3,6 +3,7 @@ package it.example.dao;
 import it.example.model.Auto;
 import it.example.rowMapper.AutoRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -49,5 +50,21 @@ public class AutoDAOImpl implements AutoDAO {
     @Override
     public void deleteAuto(int id) {
         jdbcTemplate.update("DELETE FROM autos WHERE id= ?", id);
+    }
+
+    @Override
+    public List<Auto> searchAuto(String text) {
+        Object obj = "%";
+        text = String.valueOf(obj).concat(text.concat("%"));
+        Object[] sqlParams = {text,text,text,text,text,text};
+        try {
+            return jdbcTemplate.query("SELECT * FROM autos WHERE marca LIKE ? OR modello LIKE ? OR " +
+                    "CAST(cilindrata AS VARCHAR) LIKE ? OR " +
+                    "CAST(cavalli AS VARCHAR) LIKE ? OR " +
+                    "CAST(coppia AS VARCHAR) LIKE ? OR " +
+                    "colore LIKE ?", new AutoRowMapper(), sqlParams);
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
     }
 }
