@@ -25,6 +25,15 @@ services:
         source: postgres
         target: /var/lib/postgresql/data
 
+  flyway:
+    image: redgate/flyway
+    container_name: flyway
+    depends_on:
+      - postgres
+    volumes:
+      - "./flyway/conf:/flyway/conf"
+      - "./flyway/sql:/flyway/sql"
+      - "./flyway/db:/flyway/db"
 
 volumes:
   postgres:
