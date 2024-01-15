@@ -15,7 +15,7 @@ import java.util.List;
 @Controller //Il Controller è SOLO il Presentation layer dei vari endpoints, la logica è affidata al DAO, chiamato dal service
 public class AutoController {
 
-//GET => User richiede info -> View -> Controller -> DAO -> DB
+//GET => User richiede info -> View -> Controller -> Service -> DAO -> DB
 //POST => User inserisce info nel db -> Redirect a una View di sicurezza con GetMapping(PRG)
     @Autowired
     private AutoService autoService;
