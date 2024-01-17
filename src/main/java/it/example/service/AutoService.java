@@ -10,5 +10,4 @@ public interface AutoService {
     Auto getAutoById(int id);
     void deleteAuto(int id);
     List<Auto> searchAuto(String text);
-    void io();
 }
