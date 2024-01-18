@@ -60,9 +60,14 @@ public class AutoDAOImpl implements AutoDAO {
                     "LOWER(CAST(cilindrata AS VARCHAR)) LIKE LOWER(?) OR " +
                     "LOWER(CAST(cavalli AS VARCHAR)) LIKE LOWER(?) OR " +
                     "LOWER(CAST(coppia AS VARCHAR)) LIKE LOWER(?) OR " +
-                    "LOWER(colore) LIKE LOWER(?)", new AutoRowMapper(), sqlParams);
+                    "LOWER(colore) LIKE LOWER(?) ORDER BY id", new AutoRowMapper(), sqlParams);
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
+    }
+
+    @Override
+    public void resetTable() {
+        jdbcTemplate.update("TRUNCATE TABLE public.autos");
     }
 }

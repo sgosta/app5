@@ -36,4 +36,9 @@ public class AutoServiceImpl implements AutoService{
     public List<Auto> searchAuto(String text) {
         return autoDAO.searchAuto(text);
     }
+
+    @Override
+    public void resetTable() {
+        autoDAO.resetTable();
+    }
 }

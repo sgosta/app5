@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/e6f6506e-8a6b-413c-81db-ff0d76479fae/console.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/flyway/sql/V20240110123030__Create_person_table.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/it/example/dao/AutoDAOImpl.java" dialect="PostgreSQL" />
     <file url="PROJECT" dialect="PostgreSQL" />

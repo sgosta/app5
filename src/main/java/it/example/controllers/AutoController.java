@@ -35,7 +35,7 @@ public class AutoController {
         return "add_auto";
     }
 //PRG Pattern => POST -> creazione da parte dell'utente => REDIRECT -> spostare l'utente in una
-// url di GET per evitare i refresh => GET -> qualsiasi refresh non ha effetti sul db
+//url di GET per evitare i refresh => GET -> qualsiasi refresh non ha effetti sul db
     @PostMapping("/save_auto")
     public String saveAuto(Auto auto) {
         autoService.saveAuto(auto);
@@ -67,5 +67,12 @@ public class AutoController {
             mv.setViewName("list_autos");
 
             return mv;
+    }
+
+    @GetMapping("/reset")
+    public String resetTable() {
+        autoService.resetTable();
+
+        return "redirect:/";
     }
 }
