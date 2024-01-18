@@ -21,33 +21,33 @@
   </form>
 </div>
 <div style="margin-left: 190px">
-  <form action="reset" method="GET" onclick="if(!(confirm('Procedere con il reset della tabella?'))) return false">
-    <input type="submit" value="Azzera tabella">
+  <form action="reset" method="GET">
+    <input type="submit" value="Azzera tabella" onclick="if(!(confirm('Procedere con il reset della tabella?'))) return false">
   </form>
 </div>
 <div align="center">
   <table border="5" width="80%">
     <thead>
     <tr>
-      <td>ID</td>
-      <td>Marca</td>
-      <td>Modello</td>
-      <td>Cilindrata</td>
-      <td>Cavalli</td>
-      <td>Coppia</td>
-      <td>Colore</td>
+      <td style="background-color: aquamarine">ID</td>
+      <td style="background-color: aquamarine">Marca</td>
+      <td style="background-color: aquamarine">Modello</td>
+      <td style="background-color: aquamarine">Cilindrata</td>
+      <td style="background-color: aquamarine">Cavalli</td>
+      <td style="background-color: aquamarine">Coppia</td>
+      <td style="background-color: aquamarine">Colore</td>
     </tr>
     </thead>
 
     <c:forEach var="auto" items="${loadedAutos}">
       <tr>     <%--I campi del model sono privati, ma la jsp chiama internamente i rispettivi getters--%>
-        <td>${auto.id}</td>
-        <td>${auto.marca}</td>
-        <td>${auto.modello}</td>
-        <td>${auto.cilindrata}</td>
-        <td>${auto.cavalli}</td>
-        <td>${auto.coppia}</td>
-        <td>${auto.colore}</td>
+        <td style="background-color: aqua">${auto.id}</td>
+        <td style="background-color: aqua">${auto.marca}</td>
+        <td style="background-color: aqua">${auto.modello}</td>
+        <td style="background-color: aqua">${auto.cilindrata}</td>
+        <td style="background-color: aqua">${auto.cavalli}</td>
+        <td style="background-color: aqua">${auto.coppia}</td>
+        <td style="background-color: aqua">${auto.colore}</td>
         <td align="center"><a href="update_auto?id=${auto.id}" style="color: darkgreen">Update</a></td>
         <td align="center"><a href="delete_auto?id=${auto.id}"
                               onclick="if(!(confirm('Procedere con la eliminazione di questa auto?')))
