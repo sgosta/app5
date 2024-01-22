@@ -65,14 +65,14 @@
         <td style="background-color: aqua">${auto.id}</td>
         <td style="background-color: aqua">${auto.marca}</td>
         <td style="background-color: aqua">${auto.modello}</td>
-        <td style="background-color: aqua">${auto.cilindrata}</td>
-        <td style="background-color: aqua">${auto.cavalli}</td>
-        <td style="background-color: aqua">${auto.coppia}</td>
+        <td style="background-color: aqua">${auto.cilindrata}cc</td>
+        <td style="background-color: aqua">${auto.cavalli}cv</td>
+        <td style="background-color: aqua">${auto.coppia}Nm</td>
         <td style="background-color: aqua">${auto.colore}</td>
-        <td align="center" style="background-color: aquamarine"><a href="update_auto?id=${auto.id}" style="color: darkgreen">Update</a></td>
+        <td align="center" style="background-color: aquamarine"><a href="update_auto?id=${auto.id}" style="color: darkgreen">Aggiorna</a></td>
         <td align="center" style="background-color: aquamarine"><a href="delete_auto?id=${auto.id}"
                               onclick="if(!(confirm('Procedere con la eliminazione di questa auto?')))
-                           return false" style="color: crimson">Delete</a>
+                           return false" style="color: crimson">Elimina</a>
         </td>
       </tr>
     </c:forEach>
@@ -81,7 +81,7 @@
 
 <div align="center">
   <form action="add_auto">
-    <input type="submit" value="==> Aggiungi Auto <==" style="margin: 10px; background-color: aquamarine">
+    <input type="submit" value="==> Aggiungi Auto <==" style="margin: 10px; background-color: aquamarine; font-size: 20px">
   </form>
 </div>
 

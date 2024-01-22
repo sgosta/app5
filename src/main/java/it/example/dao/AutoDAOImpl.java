@@ -4,6 +4,7 @@ import it.example.model.Auto;
 import it.example.rowMapper.AutoRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.BadSqlGrammarException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import java.util.List;
@@ -75,7 +76,7 @@ public class AutoDAOImpl implements AutoDAO {
     public List<Auto> sortTable(String sortCol, String sort) {
         try {
             return jdbcTemplate.query("SELECT * FROM autos ORDER BY "+sortCol+" "+sort, new AutoRowMapper());
-        } catch (EmptyResultDataAccessException e) {
+        } catch (EmptyResultDataAccessException | BadSqlGrammarException e) {
             return null;
         }
     }

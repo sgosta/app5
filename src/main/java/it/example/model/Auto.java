@@ -1,8 +1,8 @@
 package it.example.model;
 
 import java.util.Objects;
-
-public class Auto {     //Entity Object, Domain Object, Business Object che mappa attraverso il Mapper i campi del db in sé
+//Entity Object, Domain Object, Business Object che mappa attraverso il Mapper i campi del db in sé
+public class Auto {
 
     private int id;
     private String marca;
@@ -94,3 +94,5 @@ public class Auto {     //Entity Object, Domain Object, Business Object che mapp
                 "}\n";
     }
 }
+
+
