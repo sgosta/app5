@@ -41,4 +41,9 @@ public class AutoServiceImpl implements AutoService{
     public void resetTable() {
         autoDAO.resetTable();
     }
+
+    @Override
+    public List<Auto> sortTable(String sortCol, String sort) {
+         return autoDAO.sortTable(sortCol, sort);
+    }
 }

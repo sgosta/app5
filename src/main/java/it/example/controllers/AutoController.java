@@ -75,4 +75,13 @@ public class AutoController {
 
         return "redirect:/";
     }
+
+    @GetMapping("/sort")
+    public ModelAndView sortTable(@RequestParam("sortCol")String sortCol, @RequestParam("sort")String sort) {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("loadedAutos", autoService.sortTable(sortCol, sort));
+        mv.setViewName("list_autos");
+
+        return mv;
+    }
 }

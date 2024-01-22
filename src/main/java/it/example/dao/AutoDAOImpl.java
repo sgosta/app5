@@ -70,4 +70,13 @@ public class AutoDAOImpl implements AutoDAO {
     public void resetTable() {
         jdbcTemplate.update("TRUNCATE TABLE public.autos");
     }
+
+    @Override
+    public List<Auto> sortTable(String sortCol, String sort) {
+        try {
+            return jdbcTemplate.query("SELECT * FROM autos ORDER BY "+sortCol+" "+sort, new AutoRowMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
 }
